@@ -1,0 +1,20 @@
+## How and why
+The example of this bot runs in [@paysysmirbot](https://t.me/paysysmirbot). This telegram bot uses beautifulsoup4 to scrap data from [Payment System MIR official website](https://mironline.ru/support/list/kursy_mir/). It handles with exhchange rated data (directrly scraping it from the website and calculates the inverted exchange rate 1 / x). Script packing data from the website to a simple JSON file along with some metadata. As long as exchange rates changing only once per day, the bot checking the date in JSON metadata at first. If the data was recorded today, it will use it without requesting new data from the website. Script will request new data if the it wouldn't find the JSON file or if the file will be outdated. The script stores JSON data file in `data` directory.
+
+## Available commands
+`/start` - welcomes user, sends exchange rates and tips about other two commands
+`/rates` - whenever you want to know the exhcange rates
+`/notify` - aftet enetering this command the bot will send you exhchange rates every 24 hours
+
+## Good to know
+The bot using `User-Agent` from the external file, which is obviously doesn't appear in the repo. Remember to put the correct User-Agent to the script (with `decouple` or manually), otherwise your request to the website will be denied.
+
+## Logging
+Since the website might try to block scraping (or if the structure of the page will change), the bot has simple logging implemented. Logs are stored in the `logs` directory. There're will be two files: `scrap_log.txt` and `message_log.txt`. The first one stores information about scraping script: whenever the JSON file was loaded or when scripts made a new request to the website and dump data to the file. The second log stores information about all user ineractions with bot (who and when entered different commands).
+
+# Templates
+The bot using message templates, which storing in the JSON file in `templates` directory and accessing to the messages by it's key in the file.
+
+## Flowchart
+
+![Flowchart of bot logic](https://iwatkot.online/img_share/paysysmirbot-flowchart.png)

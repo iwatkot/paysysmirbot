@@ -10,7 +10,7 @@ The example of this bot runs in [@paysysmirbot](https://t.me/paysysmirbot). This
 The bot using `User-Agent` from the external file, which is obviously doesn't appear in the repo. Remember to put the correct User-Agent to the script (with `decouple` or manually), otherwise your request to the website will be denied.
 
 ## Logging
-Since the website might try to block scraping (or if the structure of the page will change), the bot has simple logging implemented. Logs are stored in the `logs` directory. There're will be two files: `scrap_log.txt` and `message_log.txt`. The first one stores information about scraping script: whenever the JSON file was loaded or when scripts made a new request to the website and dump data to the file. The second log stores information about all user ineractions with bot (who and when entered different commands).
+Since the website might try to block scraping (or if the structure of the page will change), the bot has simple logging implemented. Logs are stored in the `logs` directory. All logs are stored in the file `main_log.txt`. It contains both: information about scraping script - whenever the JSON file was loaded or when scripts made a new request to the website and dump data to the file, and information about all user ineractions with bot (who and when entered different commands).
 
 # Templates
 The bot using message templates, which storing in the JSON file in `templates` directory and accessing to the messages by it's key in the file.

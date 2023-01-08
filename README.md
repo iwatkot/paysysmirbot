@@ -1,3 +1,5 @@
+<a href="https://codeclimate.com/github/iwatkot/paysysmirbot/maintainability"><img src="https://api.codeclimate.com/v1/badges/53242d851173a196c116/maintainability" /></a>
+
 ## How and why
 The example of this bot runs in [@paysysmirbot](https://t.me/paysysmirbot). This telegram bot uses beautifulsoup4 to scrap data from [Payment System MIR official website](https://mironline.ru/support/list/kursy_mir/). It handles with exhchange rated data (directrly scraping it from the website and calculates the inverted exchange rate 1 / x). Script packing data from the website to a simple JSON file along with some metadata. As long as exchange rates changing only once per day, the bot checking the date in JSON metadata at first. If the data was recorded today, it will use it without requesting new data from the website. Script will request new data if the it wouldn't find the JSON file or if the file will be outdated. The script stores JSON data file in `data` directory.
 

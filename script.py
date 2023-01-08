@@ -10,7 +10,7 @@ from datetime import date
 RATES_FILE = 'data/rates.json'
 CURRENCY_LENGHT = 20
 CURRENCIES_NUMBER = 7
-RATE_LENGHT = 12
+RATE_LENGHT = 8
 URL = 'https://mironline.ru/support/list/kursy_mir/'
 
 
@@ -76,8 +76,8 @@ def format_data(raw_data):
     formatted_message += str(date.today()).replace('-', '\\-') + '\n'
     for currency, rate in raw_data.items():
         inversed_rate = str(round(1 / float(rate), 4)).replace('.', '\\.')
-        rate = rate.replace('.', '\\.')
+        rate = str(round(float(rate), 4)).replace('.', '\\.')
         currency = currency + ' ' * (CURRENCY_LENGHT - len(currency))
         rate = rate + ' ' * (RATE_LENGHT - len(rate))
-        formatted_message += f'`\n{currency}:  {rate} \\|  {inversed_rate}`'
+        formatted_message += f'`\n{currency}: {rate} \\| {inversed_rate}`'
     return f"{formatted_message}"

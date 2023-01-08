@@ -2,9 +2,9 @@
 The example of this bot runs in [@paysysmirbot](https://t.me/paysysmirbot). This telegram bot uses beautifulsoup4 to scrap data from [Payment System MIR official website](https://mironline.ru/support/list/kursy_mir/). It handles with exhchange rated data (directrly scraping it from the website and calculates the inverted exchange rate 1 / x). Script packing data from the website to a simple JSON file along with some metadata. As long as exchange rates changing only once per day, the bot checking the date in JSON metadata at first. If the data was recorded today, it will use it without requesting new data from the website. Script will request new data if the it wouldn't find the JSON file or if the file will be outdated. The script stores JSON data file in `data` directory.
 
 ## Available commands
-`/start` - welcomes user, sends exchange rates and tips about other two commands
-`/rates` - whenever you want to know the exhcange rates
-`/notify` - aftet enetering this command the bot will send you exhchange rates every 24 hours
+`/start` - welcomes user, sends exchange rates and tips about other two commands\
+`/rates` - whenever you want to know the exhcange rates\
+`/notify` - aftet enetering this command the bot will send you exhchange rates every 24 hours\
 
 ## Good to know
 The bot using `User-Agent` from the external file, which is obviously doesn't appear in the repo. Remember to put the correct User-Agent to the script (with `decouple` or manually), otherwise your request to the website will be denied.

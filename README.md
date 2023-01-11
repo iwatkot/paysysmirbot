@@ -19,4 +19,4 @@ The bot using message templates, which storing in the JSON file in `templates` d
 
 ## Flowchart
 
-![Flowchart of bot logic](https://iwatkot.online/img_share/paysysmirbot-flowchart.png)
+![Flowchart of bot logic](http://iwasend.ru/img_share/github/paysysmirbot-flowchart.png)

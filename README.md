@@ -14,7 +14,7 @@ The bot using `User-Agent` from the external file, which is obviously doesn't ap
 ## Logging
 Since the website might try to block scraping (or if the structure of the page will change), the bot has simple logging implemented. Logs are stored in the `logs` directory. All logs are stored in the file `main_log.txt`. It contains both: information about scraping script - whenever the JSON file was loaded or when scripts made a new request to the website and dump data to the file, and information about all user ineractions with bot (who and when entered different commands).
 
-# Templates
+## Templates
 The bot using message templates, which storing in the JSON file in `templates` directory and accessing to the messages by it's key in the file.
 
 ## Changelog

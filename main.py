@@ -2,6 +2,7 @@ import asyncio
 import json
 import logging
 import aiocron
+import sys
 
 from aiogram import Bot, Dispatcher, executor, types
 from decouple import config
@@ -15,6 +16,7 @@ TOKEN = config('TOKEN')
 
 logging.basicConfig(level=logging.INFO, filename=LOG_FILE, filemode='a',
                     format="%(asctime)s %(levelname)s %(message)s")
+logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
 # Loading messages templates from JSON file.
 with open(MESSAGES_FILE, encoding='utf8') as json_f:

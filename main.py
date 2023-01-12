@@ -1,11 +1,13 @@
 import asyncio
 import json
 import logging
+import aiocron
 
 from aiogram import Bot, Dispatcher, executor, types
 from decouple import config
 
 from script import get_rates
+from script import scrap_data
 
 LOG_FILE = 'logs/main_log.txt'
 MESSAGES_FILE = 'templates/messages.json'
@@ -20,6 +22,12 @@ with open(MESSAGES_FILE, encoding='utf8') as json_f:
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot=bot)
+
+
+@aiocron.crontab('0 */3 * * *')
+async def update_data():
+    logging.info('Starting scheduled data update.')
+    scrap_data()
 
 
 def write_log(message, user_id, user_name):

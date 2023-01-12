@@ -17,6 +17,5 @@ Since the website might try to block scraping (or if the structure of the page w
 # Templates
 The bot using message templates, which storing in the JSON file in `templates` directory and accessing to the messages by it's key in the file.
 
-## Flowchart
-
-![Flowchart of bot logic](http://iwasend.ru/img_share/github/paysysmirbot-flowchart.png)
+## Changelog
+**2023/01/12** added `aiocron` for scheduled data update (every three hours) to avoid situations when the data file was generated today, but it contains old data, due to slow exchange rates updates on the source website.

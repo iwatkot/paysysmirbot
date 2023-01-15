@@ -19,4 +19,4 @@ The bot using message templates, which storing in the JSON file in `templates` d
 
 ## Changelog
 **2023/01/12** Added logging to `stdout`, should be working with `docker logs` too.<br>
-**2023/01/12** added `aiocron` for scheduled data update (every three hours) to avoid situations when the data file was generated today, but it contains old data, due to slow exchange rates updates on the source website.
+**2023/01/12** Added `aiocron` for scheduled data update (every three hours) to avoid situations when the data file was generated today, but it contains old data, due to slow exchange rates updates on the source website.

@@ -67,21 +67,5 @@ async def rates_handler(message: types.Message):
     await bot.send_message(user_id, rates, parse_mode='MarkdownV2')
 
 
-@dp.message_handler(commands=["notify"])
-async def notify_handler(message: types.Message):
-    # Handles the '/notify' command.
-    user_id = message.from_user.id
-    user_name = message.from_user.first_name
-    write_log(message, user_id, user_name)
-    # Sending message that user successfully subscribed to notifications.
-    await message.reply(messages['SUBSCRIBED_MSG'])
-    while True:
-        # Waiting for 24 hours (in seconds).
-        await asyncio.sleep(60*60*24)
-        rates = get_rates()
-        # Sending message with exchange rates.
-        await bot.send_message(user_id, rates, parse_mode='MarkdownV2')
-
-
 if __name__ == "__main__":
     executor.start_polling(dp)

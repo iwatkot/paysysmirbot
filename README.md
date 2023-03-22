@@ -17,6 +17,6 @@ Since the website might try to block scraping (or if the structure of the page w
 The bot uses message templates, which storing in the JSON file in `templates` directory and accessing to the messages by its key in the file.
 
 ## Changelog
-**2023/03/22** Removed /notify command.
+**2023/03/22** Removed /notify command. Removed the number of currencies check in script.py.<br>
 **2023/01/12** Added logging to `stdout`, should be working with `docker logs` too.<br>
 **2023/01/12** Added `aiocron` for scheduled data update (every three hours) to avoid situations when the data file was generated today, but it contains old data, due to slow exchange rate updates on the source website.
